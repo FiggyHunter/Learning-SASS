@@ -1,0 +1,31 @@
+// <=700px - mobile 
+// <=900px - tablets
+// <= 1440px - screens
+
+// keys - name 
+// value - value
+
+
+$breakpoints-up: (
+    "medium": 43.75em,
+    "large": 56.25em,
+    "xlarge": 90em
+);
+
+@mixin breakpoint ($size) {
+    @media (min-width: map-get($breakpoints-up, $size) ) {
+        @content;
+    }
+}
+
+@mixin max-breakpoint($size) {
+    @media (max-width: map-get($breakpoints-down,$size)) {
+        @content;
+    }
+}
+
+$breakpoints-down: (
+    "small" : 43.7485em ,
+    "medium" : 56.24875em ,
+    "large" : 89.99875em 
+); 

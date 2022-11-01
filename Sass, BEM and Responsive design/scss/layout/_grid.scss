@@ -1,0 +1,34 @@
+@use '../util/' as b;
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 3rem;
+    // max-width: 1000px;
+    width: min(calc(100% - 40px),1000px);
+    margin-inline: auto;
+    padding: 0px 20px;
+@include b.breakpoint(large) 
+{
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto;
+}
+
+        &__main,
+        &__sidebar {
+            padding: b.rem(50);
+        }
+
+        &__main {
+            background-color: #00ffff;
+        }
+
+        &__sidebar {
+            background-color: #ee82ee;
+            @include b.max-breakpoint(medium) {
+                text-align: center;
+            }
+        }
+   
+}
